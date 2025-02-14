@@ -21,13 +21,13 @@
 # 2. Instalação
 ####################################################################
 # 2.1. Atualizar
-sudo apt update && sudo apt dist-upgrade -y
+# sudo apt update && sudo apt dist-upgrade -y
 
 # 2.2. Reconfigurar timezone
-sudo dpkg-reconfigure tzdata
+# sudo dpkg-reconfigure tzdata
 
 # 2.3. Reiniciar
-sudo reboot
+# sudo reboot
 
 # 2.4. Instalar Apache, PHP e MySQL
 sudo apt install -y \
@@ -55,7 +55,7 @@ sudo apt install -y \
 
 # 2.5. Criar banco de dados do glpi
 sudo mysql -e "CREATE DATABASE glpi"
-sudo mysql -e "GRANT ALL PRIVILEGES ON glpi.* TO 'glpi'@'localhost' IDENTIFIED BY 'P4ssw0rd'"
+sudo mysql -e "GRANT ALL PRIVILEGES ON glpi.* TO 'glpi'@'localhost' IDENTIFIED BY 'semurb@2025'"
 sudo mysql -e "GRANT SELECT ON mysql.time_zone_name TO 'glpi'@'localhost'"
 sudo mysql -e "FLUSH PRIVILEGES"
 
@@ -96,8 +96,8 @@ sudo a2enmod rewrite
 sudo systemctl restart apache2
 
 
-# 2.13. Download do glpi
-wget -q https://github.com/glpi-project/glpi/releases/download/10.0.9/glpi-10.0.9.tgz
+# 2.13. Download do glpi (https://glpi-project.org/pt-br/baixar/)
+wget -q https://github.com/glpi-project/glpi/releases/download/10.0.18/glpi-10.0.18.tgz
 
 
 # 2.14. Descompactar a pasta do GLPI
@@ -161,8 +161,3 @@ EOF
 # 4.3.1. Enviar os usuários para a lixeira
 # 4.3.2. Remover permanentemente
 # 4.3.4. Configurar a url de acesso ao sistema em: Configurar -> Geral -> Configuração Geral -> URL da aplicação.
-
-
-
-	
-
