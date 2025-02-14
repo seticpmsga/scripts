@@ -54,7 +54,7 @@ sudo apt install -y \
 
 
 # 2.5. Criar banco de dados do glpi
-sudo mysql -e "CREATE DATABASE NOT EXISTS glpi"
+sudo mysql -e "CREATE DATABASE IF NOT EXISTS glpi"
 sudo mysql -e "GRANT ALL PRIVILEGES ON glpi.* TO 'glpi'@'localhost' IDENTIFIED BY 'P4ssw0rd'"
 sudo mysql -e "GRANT SELECT ON mysql.time_zone_name TO 'glpi'@'localhost'"
 sudo mysql -e "FLUSH PRIVILEGES"
