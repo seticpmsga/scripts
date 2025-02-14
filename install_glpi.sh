@@ -67,14 +67,14 @@ mysql_tzinfo_to_sql /usr/share/zoneinfo | sudo mysql -u root mysql
 sudo a2dissite 000-default.conf
 
 # 2.8. Habilita session.cookie_httponly
-sudo sed -i 's/^session.cookie_httponly =/session.cookie_httponly = on/' /etc/php/8.1/apache2/php.ini && \
-	sudo sed -i 's/^;date.timezone =/date.timezone = America\/Sao_Paulo/' /etc/php/8.1/apache2/php.ini
+sudo sed -i 's/^session.cookie_httponly =/session.cookie_httponly = on/' /etc/php/8.3/apache2/php.ini && \
+	sudo sed -i 's/^;date.timezone =/date.timezone = America\/Recife/' /etc/php/8.3/apache2/php.ini
 	
 
 # 2.9. Criar o virtualhost do glpi
 cat << EOF | sudo tee /etc/apache2/sites-available/glpi.conf
 <VirtualHost *:80>
-	ServerName glpi.ninjapfsense.com.br
+	ServerName glpi.pmsga.com.br
 	DocumentRoot /var/www/glpi/public
 	<Directory /var/www/glpi/public>
 		Require all granted
